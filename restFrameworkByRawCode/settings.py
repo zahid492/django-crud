@@ -81,9 +81,9 @@ WSGI_APPLICATION = 'restFrameworkByRawCode.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'taskdb',
+        'NAME': 'student_informations',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '123123',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '',
     }
@@ -94,6 +94,7 @@ DATABASES = {
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
 
 TIME_ZONE = 'UTC'
 
@@ -106,8 +107,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-
 STATIC_URL = '/static/'
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.

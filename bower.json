@@ -1,0 +1,21 @@
+{
+  "name": "django-crud",
+  "homepage": "https://github.com/zahid492/django-crud",
+  "description": "Practice Crud",
+  "main": "python manage",
+  "authors": [
+    "Zahidur Rahman"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}

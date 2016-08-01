@@ -4,7 +4,6 @@ from rawApi import views
 
 urlpatterns = patterns(
     'rawApi.views',
-    url(r'^$', 'index_page'),
     url(r'^tasks/$', 'task_list', name='task_list'),
     url(r'^tasks/(?P<pk>[0-9]+)$', 'task_detail', name='task_detail'),
    	url(r'^zip/$', views.ZipList.as_view(),name='zip-list'),

@@ -1,9 +1,22 @@
-<<!DOCTYPE html>
+{% load staticfiles %}
+<!DOCTYPE html>
 <html>
 <head>
 	<title>sds</title>
+	<style type="text/css" href="/static/css/style.css"></style>
+	<style type="text/css" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}"></style>
 </head>
+
 <body>
-sdsd
+<div class="row">
+<div class="col-md-6"></div>
+
+</div>
 </body>
+ <script type="text/javascript" src="{% static "bower_components/angular/angular.min.js" %}"></script>
+ <script type="text/javascript" src="{% static "bower_components/jquery/dist/jquery.min.js" %}"></script>
+ <script type="text/javascript" src="{% static "bower_components/bootstrap/dist/js/bootstrap.js" %}"></script>
+
+
+ <script type="text/javascript" src="{% static "js/app.js" %}"></script>
 </html>
