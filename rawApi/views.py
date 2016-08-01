@@ -3,7 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from rawApi.models import Task,State,City,Country,Zip
-from rawApi.serializers import TaskSerializer,ZipSerializer,CitySerializer,StateSerializer,CountrySerializer
+from rawApi.serializers import TaskSerializer,ZipSerializer,CitySerializer,StateSerializer,CountrySerializer,ZipSerializerShow
 from django.shortcuts import render
 
 
@@ -74,9 +74,14 @@ def index_page(request):
 '''							USING GENERIC CLASS BASED VIEWS				'''
 ################################################################################
 
-class ZipList(generics.ListCreateAPIView):
+class ZipCreate(generics.CreateAPIView):
     queryset = Zip.objects.all()
     serializer_class = ZipSerializer
+
+class ZipList(generics.ListAPIView):
+    queryset = Zip.objects.all()
+    serializer_class = ZipSerializerShow
+
 
 class ZipDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Zip.objects.all()

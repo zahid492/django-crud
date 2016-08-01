@@ -30,11 +30,19 @@ class CitySerializer(serializers.ModelSerializer):
         fields = ('id','name')
 
 class ZipSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Zip
+        state = StateSerializer(many=True)
+        city = CitySerializer(many=True)
+        country = CountrySerializer(many=True)
+        fields = ('id','zipcode','state','city','country',)
+
+class ZipSerializerShow(serializers.ModelSerializer):
+    state = StateSerializer()
+    city = CitySerializer()
+    country = CountrySerializer()
+
 
     class Meta:
         model = Zip
-        city = CitySerializer(many=True)
-        country = CountrySerializer(many=True)
-        state=StateSerializer(many=True)
-
-        fields = ('id','zipcode','city','country','state')
+        fields = ('id','zipcode','state','city','country',)

@@ -12,7 +12,6 @@ class State(models.Model):
     def __unicode__(self):
     	  return self.name
 
-
 class Country(models.Model):
     name = models.CharField(max_length=100,unique=True)
   
@@ -27,6 +26,6 @@ class City(models.Model):
 
 class Zip(models.Model):
     zipcode = models.CharField(max_length=100,unique=True)
-    state=models.ForeignKey(State,related_name='zip')
-    city=models.ForeignKey(City,related_name='zip')
-    country=models.ForeignKey(Country,related_name='zip')   	
+    state=models.ForeignKey(State)
+    city=models.ForeignKey(City)
+    country=models.ForeignKey(Country)
