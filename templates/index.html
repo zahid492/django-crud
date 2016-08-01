@@ -3,14 +3,86 @@
 <html>
 <head>
 	<title>sds</title>
-	<style type="text/css" href="/static/css/style.css"></style>
-	<style type="text/css" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}"></style>
+	<link rel="stylesheet" href="/static/css/style.css">
+	<link rel="stylesheet" href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}">
+
+
 </head>
 
 <body>
-<div class="row">
-<div class="col-md-6"></div>
+<div class="container">
+<h1>dssf</h1>
+    <div align="right">
+        <button class="btn btn-info" ng-click="addPerson()"> Add New Person </button>
+    </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
 
+<!--     <script type="text/ng-template" id="deleteModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Delete Person</h3>
+        </div>
+        <div class="modal-body">
+            <span>Do you really want to delete this person ?</span>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+
+    <script type="text/ng-template" id="addModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Add Person</h3>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>First Name :</label>
+                <input type="text" class="form-control" ng-model="model.first_name">
+            </div>
+            <div class="form-group">
+                <label>Last Name :</label>
+                <input type="text" class="form-control" ng-model="model.last_name">
+            </div>
+            <div class="form-group">
+                <label>Email :</label>
+                <input type="text" class="form-control" ng-model="model.email">
+            </div>
+            <div class="form-group">
+                <label>Age :</label>
+                <input type="text" class="form-control" ng-model="model.age">
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="save()">Save</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script> -->
 </div>
 </body>
  <script type="text/javascript" src="{% static "bower_components/angular/angular.min.js" %}"></script>
