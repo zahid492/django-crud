@@ -31,12 +31,13 @@ app.controller('ZipCtrl', ['$scope','zipServices', function($scope,zipServices) 
         $scope.editButton=true;
         $scope.addButton=false;
         $scope.zip = angular.copy({
+            id:formData.id,
             zipcode:formData.zipcode,
             state:formData.state.id,
             country:formData.country.id,
             city:formData.city.id
         });
-
+        console.log($scope.zip);
     };
     $scope.buttonHandler=function(data){
         console.log(data)
@@ -50,8 +51,38 @@ app.controller('ZipCtrl', ['$scope','zipServices', function($scope,zipServices) 
     }
     $scope.deleteZip = function(id) {
 
+    zipServices.deleteZip(id)
+        .then(function(response) {
+               jQuery('#postEditZip').modal('hide');
+               for(var i = 0; i < $scope.zips.length; i++) {
+                    if($scope.zips[i].id == id) {
+                        $scope.zips.splice(i, 1);
+                    }
+                }
+        },
+        function(data) {
+           console.log('error', data);
+        });
+
     }
 
+
+    $scope.editZip=function (data) {
+        console.log(data);
+            zipServices.editZip(data)
+        .then(function(response) {
+
+               for(var i = 0; i < $scope.zips.length; i++) {
+                    if($scope.zips[i].id == data.id) {
+                        $scope.zips[i] = response;
+                    }
+                }
+        },
+        function(data) {
+           console.log('error', data);
+        });
+
+    }
 }]);
 
 
